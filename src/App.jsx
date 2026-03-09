@@ -387,16 +387,16 @@ function TimelineSurface({
         pointerEvents: "none",
       }}
     >
-      <div style={{ position: "relative", width: `min(92vw, ${spacing.timelineMaxWidth}px)`, pointerEvents: "auto" }}>
+      <div style={{ position: "relative", width: `min(94vw, ${spacing.timelineMaxWidth}px)`, pointerEvents: "auto" }}>
         <GlassCard
           tier="tier1"
           active
           radius={RADIUS_TOKENS.major}
-          padding="12px 18px 14px"
+          padding="14px 20px 16px"
           style={{
             minHeight: CONTROL_SIZES.timelineHeight,
             display: "grid",
-            gridTemplateColumns: "148px 1fr 112px",
+            gridTemplateColumns: "154px 1fr 118px",
             alignItems: "center",
             gap: 14,
           }}
@@ -405,7 +405,7 @@ function TimelineSurface({
             <span style={{ fontSize: 9, letterSpacing: "0.14em", color: "rgba(146,170,206,0.46)", textTransform: "uppercase" }}>
               Live Corridor
             </span>
-            <span style={{ fontSize: 12, fontWeight: 560, color: "rgba(218,231,252,0.82)", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+            <span style={{ fontSize: 12.2, fontWeight: 570, color: "rgba(222,234,252,0.84)", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
               {corridor.label}
             </span>
             <span style={{ fontSize: 9.5, color: "rgba(156,178,212,0.6)", fontVariantNumeric: "tabular-nums" }}>
@@ -418,7 +418,7 @@ function TimelineSurface({
             onMouseEnter={() => onHover(true)}
             onMouseLeave={() => onHover(false)}
           >
-            <div style={{ display: "flex", alignItems: "flex-end", height: 22, gap: 2.5, opacity: timelineUIState.hovered ? 1 : 0.88 }}>
+            <div style={{ display: "flex", alignItems: "flex-end", height: 24, gap: 2.5, opacity: timelineUIState.hovered ? 1 : 0.88 }}>
               {ticks.map((tick, idx) => {
                 const pos = (idx / (ticks.length - 1)) * 100;
                 const near = Math.abs(pos - scrubPos) < 5;
@@ -441,7 +441,7 @@ function TimelineSurface({
             </div>
 
             <div
-              style={{ position: "relative", height: 20, cursor: "pointer" }}
+              style={{ position: "relative", height: 22, cursor: "pointer" }}
               onClick={(event) => {
                 const rect = event.currentTarget.getBoundingClientRect();
                 const pct = ((event.clientX - rect.left) / rect.width) * 100;
@@ -451,7 +451,7 @@ function TimelineSurface({
               <div
                 style={{
                   position: "absolute",
-                  top: 9,
+                  top: 10,
                   left: 0,
                   right: 0,
                   height: 2,
@@ -462,7 +462,7 @@ function TimelineSurface({
               <div
                 style={{
                   position: "absolute",
-                  top: 9,
+                  top: 10,
                   left: 0,
                   width: `${scrubPos}%`,
                   height: 2,
@@ -474,7 +474,7 @@ function TimelineSurface({
                 style={{
                   position: "absolute",
                   left: `${scrubPos}%`,
-                  top: 2,
+                  top: 3,
                   width: 18,
                   height: 18,
                   borderRadius: "50%",
@@ -511,7 +511,7 @@ function TimelineSurface({
           style={{
             position: "absolute",
             left: "50%",
-            bottom: -18,
+            bottom: -21,
             transform: "translateX(-50%)",
             width: CONTROL_SIZES.playButton,
             height: CONTROL_SIZES.playButton,
@@ -626,14 +626,14 @@ function RightControlStack({
   onSelectRegion,
 }) {
   return (
-    <div style={{ display: "grid", gap: 10 }}>
-      <GlassCard tier="tier1" active radius={RADIUS_TOKENS.major} padding="14px 14px 12px" style={{ display: "grid", gap: 10 }}>
+    <div style={{ display: "grid", gap: 12 }}>
+      <GlassCard tier="tier1" active radius={RADIUS_TOKENS.major} padding="15px 14px 13px" style={{ display: "grid", gap: 12 }}>
         <PanelLabel>Hero Controls</PanelLabel>
         <SceneSlider label="Glow" value={glow} onChange={setGlow} />
         <SceneSlider label="Persistence" value={persistence} onChange={setPersistence} />
       </GlassCard>
 
-      <GlassCard tier="tier2" radius={RADIUS_TOKENS.nested} padding="12px 12px 10px" style={{ display: "grid", gap: 10 }}>
+      <GlassCard tier="tier2" radius={RADIUS_TOKENS.nested} padding="12px 12px 10px" style={{ display: "grid", gap: 12 }}>
         <CompactSection title="Atmosphere" defaultOpen>
           <div style={{ display: "grid", gap: 8 }}>
             {[

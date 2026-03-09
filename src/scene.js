@@ -1,7 +1,7 @@
 export const LABEL_TIERS = {
-  A: { fontSize: 13.8, weight: 600, alpha: 0.88, offsetX: 8, offsetY: -6 },
-  B: { fontSize: 11.2, weight: 550, alpha: 0.58, offsetX: 7, offsetY: -5 },
-  C: { fontSize: 9.2, weight: 500, alpha: 0.26, offsetX: 6, offsetY: -4 },
+  A: { fontSize: 14.4, weight: 610, alpha: 0.9, offsetX: 8, offsetY: -6 },
+  B: { fontSize: 11.4, weight: 550, alpha: 0.52, offsetX: 7, offsetY: -5 },
+  C: { fontSize: 9.1, weight: 500, alpha: 0.22, offsetX: 6, offsetY: -4 },
 };
 
 export const LIGHT_TIER_PROFILES = {
@@ -250,9 +250,9 @@ function drawCorridorField(ctx, proj, corridor, time, glowGain) {
   for (let i = 0; i < points.length; i += 1) {
     const p = points[i];
     const pulse = 0.88 + 0.12 * Math.sin(time * 0.00035 + i * 0.9);
-    const radial = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, 115 * glowGain * pulse);
-    radial.addColorStop(0, "rgba(90,140,255,0.07)");
-    radial.addColorStop(0.45, "rgba(72,126,230,0.03)");
+    const radial = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, 124 * glowGain * pulse);
+    radial.addColorStop(0, "rgba(90,140,255,0.08)");
+    radial.addColorStop(0.45, "rgba(72,126,230,0.036)");
     radial.addColorStop(1, "rgba(56,108,200,0)");
     ctx.fillStyle = radial;
     ctx.beginPath();
@@ -266,10 +266,10 @@ function drawCorridorField(ctx, proj, corridor, time, glowGain) {
     if (i === 0) ctx.moveTo(p.x, p.y);
     else ctx.lineTo(p.x, p.y);
   }
-  ctx.lineWidth = 1.8;
-  ctx.strokeStyle = "rgba(82,146,255,0.2)";
-  ctx.shadowColor = "rgba(84,155,255,0.32)";
-  ctx.shadowBlur = 10;
+  ctx.lineWidth = 2;
+  ctx.strokeStyle = "rgba(90,154,255,0.24)";
+  ctx.shadowColor = "rgba(90,160,255,0.36)";
+  ctx.shadowBlur = 12;
   ctx.stroke();
 
   ctx.restore();
@@ -351,28 +351,28 @@ function drawSeaAtmosphere(ctx, w, h, time, hazeEnabled) {
 
 function drawCoastlineGlow(ctx, proj) {
   ctx.save();
-  ctx.shadowColor = "rgba(76,138,252,0.28)";
-  ctx.shadowBlur = 28;
+  ctx.shadowColor = "rgba(76,138,252,0.34)";
+  ctx.shadowBlur = 31;
   for (const poly of ALL_LANDS) {
     drawPoly(ctx, proj, poly);
-    ctx.strokeStyle = "rgba(62,118,220,0.12)";
-    ctx.lineWidth = 3.2;
+    ctx.strokeStyle = "rgba(76,132,236,0.14)";
+    ctx.lineWidth = 3.4;
     ctx.stroke();
   }
   ctx.restore();
 
   ctx.save();
-  ctx.shadowColor = "rgba(126,188,255,0.22)";
-  ctx.shadowBlur = 10;
+  ctx.shadowColor = "rgba(126,188,255,0.28)";
+  ctx.shadowBlur = 12;
   drawPoly(ctx, proj, UK_MAINLAND);
-  ctx.strokeStyle = "rgba(108,170,255,0.28)";
-  ctx.lineWidth = 1.8;
+  ctx.strokeStyle = "rgba(118,182,255,0.34)";
+  ctx.lineWidth = 2.1;
   ctx.stroke();
   ctx.restore();
 
   drawPoly(ctx, proj, UK_MAINLAND);
-  ctx.strokeStyle = "rgba(142,202,255,0.22)";
-  ctx.lineWidth = 0.9;
+  ctx.strokeStyle = "rgba(146,208,255,0.24)";
+  ctx.lineWidth = 1;
   ctx.stroke();
 
   for (const poly of [NETH, BELFR]) {
@@ -391,7 +391,7 @@ function drawLabels(ctx, proj, activeCorridor, viewportMode) {
     if (pos.x < 5 || pos.x > ctx.canvas.width || pos.y < 5 || pos.y > ctx.canvas.height) continue;
 
     const labelStyle = LABEL_TIERS[city.tier] || LABEL_TIERS.C;
-    const alpha = city.tier === "C" ? labelStyle.alpha * 0.78 : labelStyle.alpha;
+    const alpha = city.tier === "C" ? labelStyle.alpha * 0.72 : labelStyle.alpha;
     ctx.font = `${labelStyle.weight} ${labelStyle.fontSize}px "Inter","SF Pro Display",system-ui,sans-serif`;
     ctx.fillStyle = `rgba(215,226,245,${alpha})`;
     ctx.textAlign = "left";
@@ -400,7 +400,7 @@ function drawLabels(ctx, proj, activeCorridor, viewportMode) {
 
   const seaPoint = proj.tp(2.4, 55.7);
   ctx.font = '300 15px "Inter","SF Pro Display",system-ui,sans-serif';
-  ctx.fillStyle = "rgba(95,132,182,0.12)";
+  ctx.fillStyle = "rgba(95,132,182,0.1)";
   ctx.textAlign = "center";
   ctx.fillText("N O R T H      S E A", seaPoint.x, seaPoint.y);
 

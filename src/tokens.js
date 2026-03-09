@@ -14,56 +14,56 @@ export const SPACING_TOKENS = {
   desktop: {
     pagePaddingX: 20,
     topOffset: 56,
-    railWidth: 250,
+    railWidth: 236,
     railGap: 14,
-    timelineBottom: 16,
-    timelineMaxWidth: 760,
-    timelineLift: 122,
+    timelineBottom: 20,
+    timelineMaxWidth: 800,
+    timelineLift: 134,
   },
   tablet: {
     pagePaddingX: 14,
     topOffset: 56,
-    railWidth: 228,
+    railWidth: 214,
     railGap: 12,
-    timelineBottom: 14,
+    timelineBottom: 18,
     timelineMaxWidth: 700,
-    timelineLift: 118,
+    timelineLift: 128,
   },
   mobile: {
     pagePaddingX: 12,
     topOffset: 54,
     railGap: 10,
-    timelineBottom: 10,
+    timelineBottom: 14,
     timelineMaxWidth: 640,
-    timelineLift: 112,
+    timelineLift: 118,
   },
 };
 
 export const CONTROL_SIZES = {
-  navHeight: 34,
+  navHeight: 32,
   navPillHeight: 28,
   iconButton: 30,
-  timelineHeight: 86,
-  playButton: 54,
+  timelineHeight: 94,
+  playButton: 58,
   sliderThumb: 16,
 };
 
 export const GLASS_TOKENS = {
   tier1: {
     background:
-      "linear-gradient(180deg, rgba(26,36,58,0.44) 0%, rgba(9,14,24,0.56) 100%)",
-    border: "1px solid rgba(255,255,255,0.06)",
+      "linear-gradient(180deg, rgba(24,34,56,0.4) 0%, rgba(9,14,24,0.5) 100%)",
+    border: "1px solid rgba(255,255,255,0.055)",
     boxShadow:
-      "0 12px 30px rgba(0,0,0,0.34), inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -1px 0 rgba(255,255,255,0.02)",
+      "0 10px 26px rgba(0,0,0,0.32), inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -1px 0 rgba(255,255,255,0.018)",
     backdropFilter: "blur(34px) saturate(1.18)",
     WebkitBackdropFilter: "blur(34px) saturate(1.18)",
   },
   tier2: {
     background:
-      "linear-gradient(180deg, rgba(24,34,54,0.34) 0%, rgba(8,13,22,0.44) 100%)",
-    border: "1px solid rgba(255,255,255,0.045)",
+      "linear-gradient(180deg, rgba(24,34,54,0.29) 0%, rgba(8,13,22,0.4) 100%)",
+    border: "1px solid rgba(255,255,255,0.04)",
     boxShadow:
-      "0 8px 24px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.06), inset 0 -1px 0 rgba(255,255,255,0.018)",
+      "0 7px 21px rgba(0,0,0,0.26), inset 0 1px 0 rgba(255,255,255,0.055), inset 0 -1px 0 rgba(255,255,255,0.016)",
     backdropFilter: "blur(28px) saturate(1.14)",
     WebkitBackdropFilter: "blur(28px) saturate(1.14)",
   },
@@ -77,9 +77,9 @@ export const GLASS_TOKENS = {
     WebkitBackdropFilter: "blur(20px) saturate(1.08)",
   },
   active: {
-    border: "1px solid rgba(152,198,255,0.24)",
+    border: "1px solid rgba(152,198,255,0.22)",
     boxShadow:
-      "0 10px 26px rgba(3,9,19,0.46), inset 0 1px 0 rgba(255,255,255,0.12), 0 0 0 1px rgba(90,155,255,0.08)",
+      "0 9px 24px rgba(3,9,19,0.43), inset 0 1px 0 rgba(255,255,255,0.11), 0 0 0 1px rgba(90,155,255,0.07)",
   },
 };
 
