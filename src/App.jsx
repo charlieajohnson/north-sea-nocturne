@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useMemo } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 // ─── Coastline polygons ─────────────────────────────────────────────────────
 const UK_MAINLAND = [
@@ -772,6 +773,7 @@ export default function NorthSeaNocturne() {
           </div>
         </div>
       </div>
+      <SpeedInsights />
     </div>
   );
 }
